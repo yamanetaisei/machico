@@ -6,7 +6,7 @@ TODO
 TODO
 ## CORDINGRULE
 
-### 注意事項
+
 
 - master で作業しない。
 - conflict 起こさないように master 更新されたらローカルの方も更新する。
@@ -25,4 +25,15 @@ ex)
 ```
 makeHeader
 ```
+
+### ファイル名
+スネークケースで記述
+
+ex)
+
+```
+data_transfer_page.dart
+
+```
+
 
