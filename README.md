@@ -6,7 +6,7 @@ TODO
 TODO
 ## CORDINGRULE
 
-# 注意事項
+### 注意事項
 
 - master で作業しない。
 - conflict 起こさないように master 更新されたらローカルの方も更新する。
@@ -15,7 +15,10 @@ TODO
 - コミット名は日本語で何をしたのかわかりやすくつける。
 - Pull Request(PR)と Issue を関連づける。
 
-
-
+### ブランチ名
+lowerキャメルケースで記述
+```
+makeHeader
+```
 
 
