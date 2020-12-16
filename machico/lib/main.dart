@@ -38,9 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-
-        title: Text(widget.title),
+        title: Text('金沢工業大学文化祭'),
+        backgroundColor: Colors.greenAccent,
+        actions:<Widget>[
+          Icon(Icons.add),
+          Icon(Icons.share)
+        ],
       ),
+
       body: Center(
 
         child: Column(
