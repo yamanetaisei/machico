@@ -40,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-
-        title: Text(widget.title),
+        title: Text('金沢工業大学文化祭'),
+        backgroundColor: HexColor('31606D'),
       ),
       body: ListView.separated(
           itemCount: listTiles.length,
