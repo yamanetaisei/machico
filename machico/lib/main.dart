@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
 
-        //差分
+        
         primarySwatch: Colors.blue,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
