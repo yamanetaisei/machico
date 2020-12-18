@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-
         
         primarySwatch: Colors.blue,
 
@@ -44,17 +43,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-          ],
-        ),
+      body: ListView.separated(
+          itemCount: listTiles.length,
+          separatorBuilder: (BuildContext context, int index) => Divider(color: Colors.black,),
+        itemBuilder: (BuildContext context, int index) {
+          return listTiles[index];
+        },
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  //ダミーデータ↓
+  static const List<Widget> listTiles = const <Widget>[
+    ListTile(
+      title: Text('お化け屋敷'),
+    ),
+    ListTile(
+      title: Text('タピオカや'),
+    ),
+    ListTile(
+      title: Text('カフェ'),
+    ),
+    ListTile(
+      title: Text('作品展示'),
+    ),
+    ListTile(
+      title: Text('軽音部ライブ'),
+    ),
+  ];
 }
