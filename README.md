@@ -4,7 +4,7 @@
 TODO
 ## 開発経緯
 TODO
-## CORDINGRULE
+## CODINGRULE
 
 
 
