@@ -7,18 +7,55 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+  static const data = [
+    Text('お化け屋敷'),Text('タピオカや'),Text('カフェ'),Text('作品展示'),Text('軽音部ライブ'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        
-        primarySwatch: Colors.blue,
-
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('金沢工業大学文化祭'),
+          backgroundColor: HexColor('31606D'),
+        ),
+        body: ListView(
+            children: [
+              _menuItem("たぴ", Icon(Icons.settings)),
+            ]
+        ),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+
+
+  Widget _menuItem(String title, Icon icon) {
+    return GestureDetector(
+      child:Container(
+          padding: EdgeInsets.all(8.0),
+          decoration: new BoxDecoration(
+              border: new Border(bottom: BorderSide(width: 1.0, color: Colors.grey))
+          ),
+          child: Row(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10.0),
+                child:icon,
+              ),
+              Text(
+                title,
+                style: TextStyle(
+                    color:Colors.black,
+                    fontSize: 18.0
+                ),
+              ),
+            ],
+          )
+      ),
+      onTap: () {
+       //画面遷移の処理
+      },
     );
   }
 }
@@ -38,38 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('金沢工業大学文化祭'),
-        backgroundColor: HexColor('31606D'),
-      ),
-      body: ListView.separated(
-          itemCount: listTiles.length,
-          separatorBuilder: (BuildContext context, int index) => Divider(color: Colors.black,),
-        itemBuilder: (BuildContext context, int index) {
-          return listTiles[index];
-        },
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
 
-  //ダミーデータ↓
-  static const List<Widget> listTiles = const <Widget>[
-    ListTile(
-      title: Text('お化け屋敷'),
-    ),
-    ListTile(
-      title: Text('タピオカや'),
-    ),
-    ListTile(
-      title: Text('カフェ'),
-    ),
-    ListTile(
-      title: Text('作品展示'),
-    ),
-    ListTile(
-      title: Text('軽音部ライブ'),
-    ),
-  ];
+
+    return Scaffold();
+
+  }
 }
