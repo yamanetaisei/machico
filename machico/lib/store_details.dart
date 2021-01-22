@@ -19,9 +19,9 @@ class StoreDetails extends StatelessWidget {
                 Image.network(
                     'https://mrs.living.jp/wp-content/uploads/2019/08/190802_BOTANIST_eye.jpg'),
                 _shopnameArea(),
+                _shopPlaceArea(),
                 _messageArea(),
               ]
-
           ),
         )
     );
@@ -43,7 +43,7 @@ Widget _shopnameArea() {
                   child: Text(
                     "タピリーノ",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 16.0),
+                        fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
                 ),
                 Container(  // 3.1.2行目
@@ -58,12 +58,40 @@ Widget _shopnameArea() {
           Text(
              '待ち時間',
              style: TextStyle(
-                 fontWeight: FontWeight.bold,fontSize: 16.0),
+                 fontWeight: FontWeight.bold,fontSize: 15.0),
            ),
 
-          Text('30分'),  // 2.3列目
+          Text('  30分',  // 2.3列目
+          style: TextStyle(
+              fontWeight: FontWeight.bold,fontSize: 20.0),
+          )
         ],
       ),
+  );
+}
+
+Widget _shopPlaceArea() {
+  return Container(
+    margin: EdgeInsets.all(16.0),
+    child: Row(    // 1行目
+      children: <Widget>[
+        Expanded(  // 2.1列目
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(  // 3.1.1行目
+                margin: const EdgeInsets.only(bottom: 4.0),
+                child: Text(
+                  "<Oo号館00階>",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16.0),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
   );
 }
 
@@ -91,6 +119,8 @@ Widget _messageArea() {
   ),
   );
 }
+
+
 
 
 
