@@ -26,15 +26,19 @@ class EventListPage extends StatefulWidget {
 }
 
 class _EventListState extends State<EventListPage>{
-  int _counter = 0;
 
-  List<String> storeNameList = ['タピオカや','お化け屋敷','ライブ'];
+  List<String> storeNameList = [
+    'タピオカや',
+    'お化け屋敷',
+    'ライブ',
+    '唐揚げや',
+    '美術部展示',
+    'おにぎりや',
+    'ハンバーガーや',
+    '演劇ショー',
+    '写真部展示',
+  ];
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,8 +52,12 @@ class _EventListState extends State<EventListPage>{
             return Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.store),
+                  leading: Image.network('https://mrs.living.jp/wp-content/uploads/2019/08/190802_BOTANIST_eye.jpg'),
                   title: Text(storeNameList[index]),
+                  trailing: Text(
+                    '30分',
+                    style: TextStyle(fontSize: 40,color: HexColor('31606D')),
+                  ),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => StoreDetails()));
                   },
