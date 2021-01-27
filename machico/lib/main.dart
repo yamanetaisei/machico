@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:machico/store_addition.dart';
 import 'package:machico/store_details.dart';
 import 'hex_color.dart';
 
@@ -45,6 +46,18 @@ class _EventListState extends State<EventListPage>{
       appBar: AppBar(
         title: Text('金沢工業大学文化祭'),
         backgroundColor: HexColor('31606D'),
+        actions: [
+          IconButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StoreAddition()
+                ),
+              );
+            },
+            icon: Icon(Icons.add),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: storeNameList.length,
