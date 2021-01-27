@@ -66,7 +66,10 @@ class _EventListState extends State<EventListPage>{
               children: [
                 ListTile(
                   leading: Image.network('https://mrs.living.jp/wp-content/uploads/2019/08/190802_BOTANIST_eye.jpg'),
-                  title: Text(storeNameList[index]),
+                  title: Text(
+                    storeNameList[index],
+                    style: TextStyle(fontSize: 20,color: HexColor('31606D')),
+                  ),
                   trailing: Text(
                     '30分',
                     style: TextStyle(fontSize: 40,color: HexColor('31606D')),

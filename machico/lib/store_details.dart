@@ -97,26 +97,26 @@ Widget _shopPlaceArea() {
 
 Widget _messageArea() {
   return Container(
-    margin: EdgeInsets.all(16.0),
-    child: Row(    // 1行目
-        children: <Widget>[
-    Expanded(  // 2.1列目
-    child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-    Container(  // 3.1.1行目
-    margin: const EdgeInsets.only(bottom: 4.0),
-    child: Text(
-      "美味しいタピオカモチモチモチモッチャモチャモチャタピオカちゃちゃちゃ",
-      style: TextStyle(
-          fontWeight: FontWeight.bold, fontSize: 16.0),
+      margin: EdgeInsets.all(16.0),
+      child: Row(    // 1行目
+          children: <Widget>[
+      Expanded(  // 2.1列目
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+              Container(  // 3.1.1行目
+                margin: const EdgeInsets.only(bottom: 4.0),
+                child: Text(
+                "美味しいタピオカモチモチモチモッチャモチャモチャタピオカちゃちゃちゃ",
+                  style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 16.0),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
-  ),
-  ],
-  ),
-  ),
-  ],
-  ),
   );
 }
 
