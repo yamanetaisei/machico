@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:machico/store_details.dart';
 import 'hex_color.dart';
 
 void main() {
@@ -7,77 +8,65 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
-  static const data = [
-    Text('お化け屋敷'),Text('タピオカや'),Text('カフェ'),Text('作品展示'),Text('軽音部ライブ'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('金沢工業大学文化祭'),
-          backgroundColor: HexColor('31606D'),
-        ),
-        body: ListView(
-            children: [
-              _menuItem("たぴ", Icon(Icons.settings)),
-            ]
-        ),
-      ),
-    );
-  }
-
-
-  Widget _menuItem(String title, Icon icon) {
-    return GestureDetector(
-      child:Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: new BoxDecoration(
-              border: new Border(bottom: BorderSide(width: 1.0, color: Colors.grey))
-          ),
-          child: Row(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(10.0),
-                child:icon,
-              ),
-              Text(
-                title,
-                style: TextStyle(
-                    color:Colors.black,
-                    fontSize: 18.0
-                ),
-              ),
-            ],
-          )
-      ),
-      onTap: () {
-       //画面遷移の処理
-      },
+      home: EventListPage(title: 'Flutter Detail Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class EventListPage extends StatefulWidget {
+  EventListPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _EventListState createState() => _EventListState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _EventListState extends State<EventListPage>{
 
+  List<String> storeNameList = [
+    'タピオカや',
+    'お化け屋敷',
+    'ライブ',
+    '唐揚げや',
+    '美術部展示',
+    'おにぎりや',
+    'ハンバーガーや',
+    '演劇ショー',
+    '写真部展示',
+  ];
 
   @override
   Widget build(BuildContext context) {
-
-
-
-    return Scaffold();
-
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('金沢工業大学文化祭'),
+        backgroundColor: HexColor('31606D'),
+      ),
+      body: ListView.builder(
+        itemCount: storeNameList.length,
+          itemBuilder: (BuildContext context, int index){
+            return Column(
+              children: [
+                ListTile(
+                  leading: Image.network('https://mrs.living.jp/wp-content/uploads/2019/08/190802_BOTANIST_eye.jpg'),
+                  title: Text(storeNameList[index]),
+                  trailing: Text(
+                    '30分',
+                    style: TextStyle(fontSize: 40,color: HexColor('31606D')),
+                  ),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => StoreDetails()));
+                  },
+                ),
+                Divider(),
+              ],
+            );
+          },
+      )
+    );
   }
 }
